@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from models.order import Order
+from models.category import Category
 from settings.config import DATABASE
 from models.product import Products
 
@@ -54,6 +55,16 @@ class DBManager(metaclass=Singleton):
         result = self._session.query(Products).filter_by(
             category_id=category
         ).all()
+        self._session.close()
+        return result
+
+    def select_all_products(self):
+        result = self._session.query(Products).all()
+        self._session.close()
+        return result
+
+    def select_all_categories(self):
+        result = self._session.query(Category).all()
         self._session.close()
         return result
 

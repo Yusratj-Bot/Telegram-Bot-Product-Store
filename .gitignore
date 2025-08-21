@@ -1,0 +1,14 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# DB files
+*.db
+*.sqlite3
+
+# Log files
+*.log
+
+# IDE files
+.idea/
